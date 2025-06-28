@@ -1,46 +1,79 @@
+# Combat Calculator Mod
 
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+A sophisticated Minecraft Forge mod that revolutionizes combat mechanics through an advanced damage calculation system, incorporating positional tactics, environmental factors, and weapon dynamics.
 
-Note also that the patches are built against "un-renamed" MCP source code (aka
-SRG Names) - this means that you will not be able to read them directly against
-normal code.
+## Features
 
-Setup Process:
-==============================
+### Core Combat System
+- Dynamic damage calculations based on multiple factors
+- Realistic positional combat mechanics
+- Advanced weapon condition impact
+- Environmental combat modifiers
+- Status effect integration
+- Elemental damage system
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
+### Detailed Combat Modifiers
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: `gradlew genEclipseRuns` (`./gradlew genEclipseRuns` if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run `gradlew eclipse` to generate the project.
+#### Weapon and Position
+- Critical Hits: +35% damage bonus
+- Backstab Attacks: +25% damage bonus
+- Frontal Attacks: -5% damage penalty
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: `gradlew genIntellijRuns` (`./gradlew genIntellijRuns` if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
+#### Weapon Durability System
+- Peak Condition (100%): +15% damage bonus
+- Very Good Condition (90%): +10% damage bonus
+- Good Condition (75%): -10% damage penalty
+- Fair Condition (50%): -16% damage penalty
+- Poor Condition (25%): -22% damage penalty
+- Critical Condition (0%): -30% damage penalty
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can 
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+#### Elemental System
+- Weakness Exploitation: +10% damage bonus
+- Resistance Mitigation: -10% damage reduction
 
-Mapping Names:
-=============================
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license, if you do not agree with it you can change your mapping names to other crowdsourced names in your 
-build.gradle. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+#### Environmental Factors
+- Rain Combat: -5% effectiveness
+- Underwater Engagement: -15% penalty
+- High Altitude Combat (Y>128): +5% bonus
+- Hot Biome Penalty: -5% reduction
 
-Additional Resources: 
-=========================
-Community Documentation: https://mcforge.readthedocs.io/en/latest/gettingstarted/  
-LexManos' Install Video: https://www.youtube.com/watch?v=8VEdtQLuLO0  
-Forge Forum: https://forums.minecraftforge.net/  
-Forge Discord: https://discord.gg/UvedJ9m  
+### Technical Implementation
+- Comprehensive damage calculation pipeline
+- Battle attribute system integration
+- Advanced enchantment compatibility
+- Status effect synchronization
+- Environmental condition monitoring
+- Durability tracking system
+- Player state analysis
+- Armor penetration mechanics
+
+## Requirements
+- Minecraft 1.20
+- Forge 47.1.0+
+- Java 17 or higher
+
+## Installation Guide
+1. Download and install Minecraft Forge 47.1.0+
+2. Obtain the Combat Calculator mod JAR
+3. Place JAR in `.minecraft/mods` folder
+4. Launch Minecraft using the Forge profile
+
+## Usage Instructions
+The mod seamlessly integrates into gameplay with no manual configuration needed. Combat mechanics are automatically enhanced during battle encounters.
+
+## Development
+- Written in Java
+- Built with Gradle
+- Uses Forge Event System
+
+## License
+GNU General Public License v3.0 (GPL-3.0)
+
+## Support and Contribution
+- Issue reports welcome
+- Pull requests accepted
+- Documentation contributions appreciated
+
+## Credits
+Created by Enderbot_12231 / netherfasterthanyou
+Powered by Minecraft Forge

@@ -373,14 +373,18 @@ public class DamageCalculator {
 
         // Weapons lose effectiveness as they break down
         if (durabilityPercent < 0.1f) {
-            return 0.85f; // 15% penalty when almost broken
+            return 0.70f; // 30% penalty when almost broken
         } else if (durabilityPercent < 0.25f) {
-            return 0.92f; // 8% penalty when heavily damaged
+            return 0.78f; // 22% penalty when heavily damaged
         } else if (durabilityPercent < 0.5f) {
-            return 0.97f; // 3% penalty when moderately damaged
+            return 0.84f; // 16% penalty when moderately damaged
+        } else if (durabilityPercent < 0.75f) {
+            return 0.90f; // 10% penalty when slightly damaged
+        } else if (durabilityPercent < 0.9f) {
+            return 1.1f; // 10% bonus when in good condition
         }
 
-        return 1.0f; // No penalty for good condition weapons
+        return 1.15f; // 15% bonus for perfect condition weapons
     }
 
     /**
