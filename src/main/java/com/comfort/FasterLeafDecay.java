@@ -4,17 +4,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties.AgeProperty;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties.AgeProperty;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties.AgeProperty;
+
+import net.minecraft.world.level.LevelAccessor;
+
 
 @Mod.EventBusSubscriber(modid = ComfortCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FasterLeafDecay {
@@ -23,11 +18,11 @@ public class FasterLeafDecay {
     @SubscribeEvent
     public static void onLogBroken(BlockEvent.BreakEvent event) {
         
-        if (event.getLevel().isClientSide) {
+        if (event.getLevel().isClientSide()) {
             return;
         }
 
-        Level level = event.getLevel();
+        LevelAccessor level = event.getLevel();
         BlockPos brokenPos = event.getPos();
         BlockState brokenState = event.getState();
 

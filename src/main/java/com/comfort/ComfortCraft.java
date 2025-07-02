@@ -25,7 +25,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 @Mod(ComfortCraft.MOD_ID)
 public class ComfortCraft {
     public static final String MOD_ID = "comfortcraft";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public ComfortCraft() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
